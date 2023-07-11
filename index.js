@@ -6,7 +6,7 @@ module.exports = {
   },
   'extends': [
     'eslint:recommended',
-    'plugin:vue/vue3-essential',
+    'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended'
   ],
   // 配置 eslint-plugin-vue 的 parser，用于解析 .vue 文件
