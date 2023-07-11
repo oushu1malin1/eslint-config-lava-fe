@@ -29,6 +29,8 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     // 禁止空函数
     '@typescript-eslint/no-empty-function': 'off',
+    // 要求导出函数和类的公共类方法显式定义返回值和参数的类型
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     // 强制要求在数组方法的回调中使用 return 语句
     'array-callback-return': 'error',
     // 不允许变量在其被定义的块之外使用
@@ -146,7 +148,9 @@ module.exports = {
     // 使用驼峰命名，不检查属性名称，不检查非结构化标识符（但仍然检查代码中以后对这些标识符的使用）
     'camelcase': ['error', { 'properties': 'never', 'ignoreDestructuring': true }],
     // 关闭 vue 自定义事件名称的风格检查，即驼峰和下划线都可以
-    'vue/custom-event-name-casing': 'off'
+    'vue/custom-event-name-casing': 'off',
+    // vue 组件多单词命名
+    'vue/multi-word-component-names': 'warn'
   },
   'overrides': [
     // 对于一些测试文件，开启 jest 环境，启用 jest 相关的全局变量
