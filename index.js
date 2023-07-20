@@ -1,7 +1,7 @@
 module.exports = {
   'env': {
     'browser': true,
-    'es6': true,
+    'es2020': true,
     'node': true
   },
   'extends': [
@@ -40,7 +40,7 @@ module.exports = {
     // 'consistent-return': 'off',
     // 要求 switch 语句必须有 default case，即便是空的
     'default-case': 'error',
-    // 在成员表达式中的 "." 之前或之后放置换行，且 "." 应该和属性 (property) 部分在同一行
+    // 在成员表达式中的 '.' 之前或之后放置换行，且 '.' 应该和属性 (property) 部分在同一行
     'dot-location': ['error', 'property'],
     // 访问对象的属性时使用 . 而不是 []，除非 [] 里面是个变量
     'dot-notation': 'error',
@@ -68,7 +68,7 @@ module.exports = {
     'no-return-assign': 'error',
     // return 语句中不允许出现 await
     'no-return-await': 'error',
-    // 不允许出现 "javascript:void(0)
+    // 不允许出现 'javascript:void(0)
     'no-script-url': 'error',
     // 不允许出现变量自己和自己比较
     'no-self-compare': 'error',
@@ -105,8 +105,11 @@ module.exports = {
     'keyword-spacing': 'error',
     // 单行代码长度最长为 150 个字符，超出警告
     'max-len': ['warn', { 'code': 150 }],
-    // 使用魔数抛出警告
-    'no-magic-numbers': 'warn',
+    // 使用魔数抛出警告，忽略 0、-1、1，忽略数组索引
+    'no-magic-numbers': ['warn', {
+      'ignore': [0, -1, 1],
+      'ignoreArrayIndexes': true,
+    }],
     // 不允许行末有尾随空格
     'no-trailing-spaces': ['error'],
     // 不允许没必要的三元表达式，如 const isYes = answer === 1 ? true : false;
@@ -141,7 +144,7 @@ module.exports = {
     'no-var': 'error',
     // 如果一个变量从未被重新赋值，使用 const 声明会更好
     'prefer-const': 'error',
-    // 函数中的变动参数推荐使用 "剩余参数"，而不是 arguments 变量
+    // 函数中的变动参数推荐使用 '剩余参数'，而不是 arguments 变量
     'prefer-rest-params': 'error',
     // 使用 console 时抛出警告
     'no-console': 'warn',
@@ -149,8 +152,21 @@ module.exports = {
     'camelcase': ['error', { 'properties': 'never', 'ignoreDestructuring': true }],
     // 关闭 vue 自定义事件名称的风格检查，即驼峰和下划线都可以
     'vue/custom-event-name-casing': 'off',
-    // vue 组件多单词命名
-    'vue/multi-word-component-names': 'warn'
+    // 关闭 vue 组件多单词命名
+    'vue/multi-word-component-names': 'off',
+    // vue 组件每行最大属性个数（单行最多 2 个，多行每行最多 1 个），超出换行
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': { 'max': 2 },
+      'multiline': { 'max': 1 }
+    }],
+    // 模板中禁止出现多个连续的空格
+    'vue/no-multi-spaces': 'error',
+    // 模板中表达式的双括号两边要加空格
+    'vue/mustache-interpolation-spacing': 'error',
+    // 模板中属性赋值等号两边不许有空格
+    'vue/no-spaces-around-equal-signs-in-attribute': 'error',
+    // 组件中非必传的属性，不需要强制设置默认值
+    'vue/require-default-prop': 'off',
   },
   'overrides': [
     // 对于一些测试文件，开启 jest 环境，启用 jest 相关的全局变量
