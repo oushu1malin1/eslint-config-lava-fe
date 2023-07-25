@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.5
+
+- vue/max-attributes-per-line warn
+
 ## 1.0.4
 
 - 魔数忽略 0、-1、1

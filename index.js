@@ -155,7 +155,7 @@ module.exports = {
     // 关闭 vue 组件多单词命名
     'vue/multi-word-component-names': 'off',
     // vue 组件每行最大属性个数（单行最多 2 个，多行每行最多 1 个），超出换行
-    'vue/max-attributes-per-line': ['error', {
+    'vue/max-attributes-per-line': ['warn', {
       'singleline': { 'max': 2 },
       'multiline': { 'max': 1 }
     }],

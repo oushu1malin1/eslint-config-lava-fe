@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-lava-fe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "eslint config for lava fe",
   "main": "index.js",
   "scripts": {},
